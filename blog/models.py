@@ -11,7 +11,14 @@ class post(models.Model):
     status = models.BooleanField(default=False) 
     published_date = models.DateTimeField(null = True)
     created_date = models.DateTimeField(auto_now_add=True)
-    updated_date = models.DateTimeField(auto_now=True) #2024-02-11 22:54:57.872785
+    updated_date = models.DateTimeField(auto_now=True)
     
+    
+    class Meta:
+        ordering = ['created_date']
+        
+        
+        
+        
     def __str__(self):
         return self.title
