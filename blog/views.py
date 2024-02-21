@@ -4,7 +4,9 @@ from blog.models import post
 
 
 def blog_view(request):
-    return render(request, 'blog/blog-home.html')
+    posts = post.objects.all()
+    context = {'posts': posts}
+    return render(request, 'blog/blog-home.html',context)
 
 def blog_single(request):
     context = {'title':'coffe is great!','content':'for having good day drink coffe','author':'kiarash payervand'}
