@@ -88,6 +88,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-8 posts-list">
+						
 							{%for post in posts%}
 							<div class="single-post row">
 								<div class="col-lg-3  col-md-3 meta-details">
@@ -106,7 +107,13 @@
 								</div>
 								<div class="col-lg-9 col-md-9 ">
 									<div class="feature-img">
-										<img class="img-fluid" src={% static "img/blog/1.jpg"%} alt="">
+										{% if post.id == 1 %}
+											<img class="img-fluid" src={% static "img/blog/2.jpg"%} alt="">
+										{% elif post.id == 2 %}
+											<img class="img-fluid" src={% static "img/blog/3.jpg"%} alt="">
+											{% elif post.id == 3 %}
+											<img class="img-fluid" src={% static "img/blog/4.jpg"%} alt="">
+										{% endif %}
 									</div>
 									<a class="posts-title" href="#"><h3>{{post.title}}</h3></a>
 									<p class="excert">
