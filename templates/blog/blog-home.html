@@ -1,4 +1,4 @@
-{% extends 'home/base.html' %}
+{% extends 'base.html' %}
 
 {%load static%}
 
@@ -115,11 +115,11 @@
 											<img class="img-fluid" src={% static "img/blog/4.jpg"%} alt="">
 										{% endif %}
 									</div>
-									<a class="posts-title" href="#"><h3>{{post.title}}</h3></a>
+									<a class="posts-title" href="{%url 'blog:single' pid=post.id %}"><h3>{{post.title}}</h3></a>
 									<p class="excert">
 										{{post.content}}
 									</p>
-									<a href="blog-single.html" class="primary-btn">View More</a>
+									<a href="{%url 'blog:single' pid=post.id %}" class="primary-btn">View More</a>
 								</div>
 							</div>
 							{%endfor%}
