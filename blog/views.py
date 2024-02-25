@@ -4,12 +4,13 @@ from blog.models import post
 
 
 def blog_view(request):
-    posts = post.objects.all()
+    posts = post.objects.filter(status=1)
     context = {'posts': posts}
     return render(request, 'blog/blog-home.html',context)
 
 def blog_single(request,pid):
-    Post = get_object_or_404 (post,pk=pid)
+    posts = post.objects.filter(status=1)
+    Post = get_object_or_404 (posts,pk=pid)
     context = {'post': Post}
     return render(request, 'blog/blog-single.html',context)
 
