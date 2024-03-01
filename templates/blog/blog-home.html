@@ -93,10 +93,8 @@
 							<div class="single-post row">
 								<div class="col-lg-3  col-md-3 meta-details">
 									<ul class="tags">
-										<li><a href="#">Food,</a></li>
-										<li><a href="#">Technology,</a></li>
-										<li><a href="#">Politics,</a></li>
-										<li><a href="#">Lifestyle</a></li>
+										
+										<li><a href="#">{{post.category.all|join:", "}}</a></li>
 									</ul>
 									<div class="user-details row">
 										<p class="user-name col-lg-12 col-md-12 col-6"><a href="#">{{post.author.get_full_name}}</a> <span class="lnr lnr-user"></span></p>
@@ -109,7 +107,7 @@
 									<div class="feature-img">
 											<img class="img-fluid" src={{post.Image.url}} alt="">
 									</div>
-									<a class="posts-title" href="{%url 'blog:single' pid=post.id %}"><h3>{{post.title}}</h3></a>
+									<a class="posts-title" href="{%url 'blog:single' pid=post.id  %}"><h3>{{post.title}}</h3></a>
 									<p class="excert">
 										
 										{{post.content}}
@@ -119,6 +117,7 @@
 								</div>
 							</div>
 							{%endfor%}
+							
 																					
 		                    <!--<nav class="blog-pagination justify-content-center d-flex">
 		                        <ul class="pagination">

@@ -20,7 +20,7 @@ class post(models.Model):
     content = models.TextField()
     # tag
     counted_veiws = models.IntegerField(default=0)
-    category = models.models.ManyToManyField(category)
+    category = models.ManyToManyField(category)
     status = models.BooleanField(default=False) 
     published_date = models.DateTimeField(null = True)
     created_date = models.DateTimeField(auto_now_add=True)
@@ -35,4 +35,6 @@ class post(models.Model):
         
     def __str__(self):
         return self.title
+    
+    
     
