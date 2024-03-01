@@ -9,9 +9,12 @@ def blog_view(request):
     return render(request, 'blog/blog-home.html',context)
 
 def blog_single(request,pid):
-    posts = post.objects.filter(status=1)
+    posts = post.objects.filter(status=1).order_by('created_date')
     Post = get_object_or_404 (posts,pk=pid)
-    context = {'post': Post}
+    next_post = posts.filter(created_date__lt=Post.created_date).last()
+    previous_post = posts.filter(created_date__gt=Post.created_date).first()
+
+    context = {'post': Post,'next_post': next_post,'previous_post': previous_post}
     return render(request, 'blog/blog-single.html',context)
 
 #def test(request,pid):
