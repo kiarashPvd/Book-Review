@@ -14,4 +14,9 @@ def function():
 
 @register.filter
 def snippet(value,arg = 70):
-    return value[:arg]
+    return value[:arg] + '...'
+
+@register.inclusion_tag('blog/blog-popularposts.html')
+def popularposts():
+    posts = post.objects.filter(status=1).order_by('-counted_veiws')[:4]
+    return {'posts':posts  }
