@@ -1,6 +1,7 @@
 from django import template
 from blog.models import post
 from blog.models import category
+from home.models import contact
 register = template.Library()
 
 @register.simple_tag(name="totalposts")
@@ -30,3 +31,4 @@ def postcategories():
     for name in categories:
         cat_dict[name] = posts.filter(category = name).count()
     return {'categories':cat_dict}
+
