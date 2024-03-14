@@ -40,7 +40,7 @@ def blog_search(request):
     return render(request, 'blog/blog-home.html',context)
 
 
-def test(request):#,pid
+#def test(request):#,pid
     #Post = get_object_or_404 (post,pk=pid)
     #context = {'post': Post}
-    return render (request, 'blog/test.html')#,context
+    #return render (request, 'blog/test.html')#,context
