@@ -4,7 +4,7 @@ from home.models import contact
 
 class ContactAdmin(admin.ModelAdmin):
     date_hierarchy = 'created_date'
-    list_display = ('name', 'email', 'created_date')
+    list_display = ('name', 'email','subject','message', 'created_date')
     list_filter = ('email',)
     search_fields = ('name', 'message')
     
