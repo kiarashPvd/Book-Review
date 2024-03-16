@@ -17,7 +17,7 @@ class contact (models.Model):
      return self.name 
  
  
-class newsletter(models.Model):
+class Newsletter(models.Model):
     email = models.EmailField()
     def __str__(self):
        return self.email
