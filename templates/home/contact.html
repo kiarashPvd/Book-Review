@@ -57,6 +57,7 @@
 								</div>
 							</div>														
 						</div>
+							
 						<div class="col-lg-8">
 							<form class="form-area contact-form text-right" action={%url 'home:contact'%} method="post">
 								<div class="row">
@@ -78,6 +79,27 @@
 								</div>
 							</form>	
 						</div>
+						{% if messages %}
+							{% for message in messages %}
+								<div class="alert alert-{{ message.tags }}">{{ message }}</div>
+							{% endfor %}
+							{% endif %}
+
+							{% if form.errors %}
+							<div class="alert alert-error">
+								<h4>Please fix the following errors:</h4>
+								<ul>
+								{% for field, errors in form.errors.items %}
+									{% for error in errors %}
+									<li>{{ error }}</li>
+									{% endfor %}
+								{% endfor %}
+								</ul>
+								{% if form.non_field_errors %}
+								{{ form.non_field_errors }}
+								{% endif %}
+							</div>
+						{% endif %}
 					</div>
 				</div>	
 			</section>
