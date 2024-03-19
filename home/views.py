@@ -27,9 +27,13 @@ def newsletter_view(request):
         form = NewsLetterForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/')
+            messages.success(request,"Your informations submited successfully")
+        else:
+            messages.error(request,"An error occurred")
     else:
-        return HttpResponseRedirect('/')
+        form = NewsLetterForm()
+    return render(request, 'home/index.html',{"form": form})
+    
     
 
 
