@@ -8,6 +8,8 @@ colorama==0.4.6
 comtypes==1.2.0
 distlib==0.3.7
 Django==4.2.7
+django-extensions==3.2.3
+django-robots==6.1
 filelock==3.12.4
 gTTS==2.4.0
 h11==0.14.0
