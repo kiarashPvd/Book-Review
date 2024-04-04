@@ -5,8 +5,8 @@
         {%for name,count in categories.items %}
         <li>
             <a href={%url 'blog:category' cat_name=name%} class="d-flex justify-content-between">
-                <p>{{name}}</p>
-                <p>{{count}}</p>
+               <h5> <p>{{name}}</p></h5>
+               <h5> <p>{{count}}</p></h5>
             </a>
         </li>
        	{%endfor%}										

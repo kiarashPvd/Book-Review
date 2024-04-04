@@ -159,7 +159,7 @@
 								{%popularposts%}
 								{%include 'blog/blog-ads.html'%}
 								{%postcategories%}
-								<div class="single-sidebar-widget newsletter-widget">
+								<!--<div class="single-sidebar-widget newsletter-widget">
 									<h4 class="newsletter-title">Newsletter</h4>
 									<p>
 										nothing
@@ -180,21 +180,12 @@
 										You can unsubscribe at any time
 									</p>								
 								</div>
-								<!--<div class="single-sidebar-widget tag-cloud-widget">
+								<div class="single-sidebar-widget tag-cloud-widget">
 									<h4 class="tagcloud-title">Tag Clouds</h4>
 									<ul>
-										<li><a href="#">Technology</a></li>
-										<li><a href="#">Fashion</a></li>
-										<li><a href="#">Architecture</a></li>
-										<li><a href="#">Fashion</a></li>
-										<li><a href="#">Food</a></li>
-										<li><a href="#">Technology</a></li>
-										<li><a href="#">Lifestyle</a></li>
-										<li><a href="#">Art</a></li>
-										<li><a href="#">Adventure</a></li>
-										<li><a href="#">Food</a></li>
-										<li><a href="#">Lifestyle</a></li>
-										<li><a href="#">Adventure</a></li>
+										{%for tag in tags%}
+										<li><a href={%url 'blog:tag' tag_name=tag.name%}>{{tag.name}}</a></li>
+										{% endfor %}
 									</ul>
 								</div>-->								
 							</div>
