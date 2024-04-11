@@ -4,6 +4,7 @@ from blog.models import post
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 
 
+
 def blog_view(request,**kwargs):
     posts = post.objects.filter(status=1)
     if kwargs.get('cat_name')!=None:
