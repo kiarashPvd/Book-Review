@@ -57,7 +57,7 @@ ROBOTS_USE_HOST = False
 ROBOTS_USE_SITEMAP = False
 
 # summernote confic
-#SUMEMERNOTE_THEME = 'bs5'
+SUMEMERNOTE_THEME = 'bs4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
