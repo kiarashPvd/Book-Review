@@ -33,6 +33,7 @@ urlpatterns = [
     path('', include('home.urls')),
     path('blog/', include('blog.urls')),
     
+    path('captcha/', include('captcha.urls')),
     path('summernote/', include('django_summernote.urls')),
     path('sitemap.xml', sitemap,{'sitemaps': sitemaps},
         name='dgango.contrib.sitemap.views.sitemap'),

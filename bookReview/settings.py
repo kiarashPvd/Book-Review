@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'django.contrib.sites',
     'django.contrib.sitemaps',
+    
+    'captcha',
     'django_extensions',
     'django_summernote',
     'robots',
