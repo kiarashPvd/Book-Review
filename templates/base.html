@@ -132,9 +132,11 @@
                             </p>								
                             <div >
                                 <form  action={%url 'home:newsletter'%} method="post" class="subscription relative">
+                                    
                                     {% csrf_token %}
                                     <div class="input-group d-flex flex-row">
                                         <input name="email" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
+                                        {{form.captcha}}
                                         <button class="btn bb-btn" type= "submit"><span class="lnr lnr-location"></span></button>		
                                     </div>									
                                     <div class="mt-10 info"></div>

@@ -18,6 +18,7 @@ class ContactForm(forms.ModelForm):
         
         
 class NewsLetterForm(forms.ModelForm):
+    captcha = CaptchaField()
     class Meta:
         model = Newsletter
         fields = '__all__'
