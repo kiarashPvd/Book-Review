@@ -59,8 +59,8 @@ SITE_ID = 2
 ROBOTS_USE_HOST = False
 ROBOTS_USE_SITEMAP = False
 
-# summernote confic
-#SUMEMERNOTE_THEME = 'bs4'
+#summernote confic
+SUMEMERNOTE_THEME = 'bs4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
