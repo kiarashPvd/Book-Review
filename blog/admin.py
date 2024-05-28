@@ -9,6 +9,7 @@ class PostAdmin(admin.ModelAdmin):
     list_filter = ('status','author',)
     ordering = ['published_date']
     search_fields = ['title','content']
+    #test
    
     
 admin.site.register(post,PostAdmin)
