@@ -41,5 +41,16 @@ class post(models.Model):
         return reverse ('blog:single',kwargs={'pid':self.id})
     
     
+class Comment(models.Model):
+    post = models.ForeignKey(post,on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    subject = models.CharField(max_length=255)
+    message = models.TextField()
+    created_date = models.DateTimeField(auto_now_add=True)
+    updated_date = models.DateTimeField(auto_now=True)
+    approved = models.BooleanField(default=False)
+    
+    
     
     
